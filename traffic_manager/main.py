@@ -76,6 +76,7 @@ E = [10, 11, 12]
 F = [27, 28, 29]
 G = [ 7,  8,  9]
 
+
 # Current intersection status
 current_A = []
 current_B = []
@@ -142,7 +143,6 @@ def consensus(vehicle_id, intersection_id, light, distance):
         except:
             pass
 
-
 def traffic_management(vehicle_id, lane_id, x, y, z):
     if lane_id != 0:
         light = lane_to_light[lane_id]
@@ -165,7 +165,7 @@ def traffic_management(vehicle_id, lane_id, x, y, z):
         vehicle_location = carla.Location(x, y * -1, z)
 
         distance = vehicle_location.distance(tl_location)
-
+        
         # logging.info(f'The vehicle {vehicle_id} is approaching intersection {intersection_id} and will arrive in {distance:.2f} meters.')
 
         consensus(vehicle_id, intersection_id, light, distance)
